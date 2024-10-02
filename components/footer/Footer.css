@@ -1,0 +1,66 @@
+/* Footer.css */
+.footer {
+  background-color: #F7F5F2; /* Same soft light tone as the navbar */
+  padding: 40px 30px;
+  text-align: center;
+  border-top: 1px solid #E8E6E3; /* Subtle border for separation */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 24px;
+  color: #6B705C; /* Earthy green for peace */
+  font-weight: bold;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer-links li {
+  margin-left: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #6B705C;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #CB997E; /* Soft brown on hover for warmth */
+}
+
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #8D8741; /* Soft brownish-gray for subtlety */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .footer-links li {
+    margin: 10px 0;
+  }
+}

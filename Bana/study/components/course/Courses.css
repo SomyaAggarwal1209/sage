@@ -1,0 +1,9 @@
+.courses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.courses ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}

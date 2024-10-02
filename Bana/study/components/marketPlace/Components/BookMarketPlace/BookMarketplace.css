@@ -1,0 +1,136 @@
+/* Container for the marketplace section */
+.book-marketplace-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #f3f4f7;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Title styling */
+.marketplace-title {
+    font-size: 3rem;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.marketplace-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #e74c3c;
+    margin: 10px auto 0;
+}
+
+/* Flexbox layout for the books */
+.books-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Each book card */
+.book-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    padding: 20px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Hover effect on book cards */
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Book image styling */
+.book-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Hover effect for book image */
+.book-card:hover .book-image {
+    transform: scale(1.08);
+}
+
+/* Book title and price */
+.book-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+/* Price styling */
+.book-price {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Button to buy the book */
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Hover effect for buy button */
+.buy-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .books-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-card {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

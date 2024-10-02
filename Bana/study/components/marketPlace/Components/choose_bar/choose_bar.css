@@ -1,0 +1,65 @@
+/* General styles for the Choose Resource component */
+.choose-resource-container {
+    background-color: #E8F5E9; /* Soft green background */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+    text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+.resource-title {
+    font-size: 28px;
+    color: #388E3C; /* Dark green for title */
+    margin-bottom: 20px;
+}
+
+/* Resource options styling */
+.resource-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Space between options */
+}
+
+/* Individual resource option styling */
+.resource-option {
+    background-color: #C8E6C9; /* Light green background */
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.resource-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected state styling */
+.selected {
+    border-color: #2E7D32; /* Darker green for selected option */
+    background-color: #A5D6A7; /* Slightly darker green */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .resource-options {
+        grid-template-columns: 1fr; /* Stack options on small screens */
+    }
+}

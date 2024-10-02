@@ -1,0 +1,75 @@
+/* General page styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F3E5F5; /* Light lavender for a calm effect */
+}
+
+/* About and Contact container */
+.aboutandcontact {
+  display: flex;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #EDE7F6; /* Soft purple-gray background */
+}
+
+/* Left section styling for About */
+.section-left-about {
+  flex: 1;
+  padding: 20px;
+  background-color: #D1C4E9; /* Lighter purple for about section */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-left-about:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Right section styling for Contact */
+.section-right-contact {
+  flex: 1;
+  padding: 20px;
+  background-color: #B39DDB; /* Darker purple for contact section */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-right-contact:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for section transitions */
+.section-left-about,
+.section-right-contact {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aboutandcontact {
+    flex-direction: column;
+  }
+
+  .section-left-about,
+  .section-right-contact {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

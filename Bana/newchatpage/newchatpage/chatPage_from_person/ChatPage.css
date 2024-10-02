@@ -1,0 +1,159 @@
+/* General page styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F0F4F8; /* Clean and light background */
+}
+
+/* Chat Page container */
+.chat-page {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, #E3F2FD, #BBDEFB); /* Soft gradient background */
+}
+
+/* Sidebar styling */
+.section-chat-sidebar {
+  width: 250px;
+  background: #3949AB; /* Calming deep blue for the sidebar */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  border-right: 2px solid #E3F2FD; /* Light border for separation */
+}
+
+.section-chat-sidebar:hover {
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar links styling */
+.section-chat-sidebar a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; /* For underline effect */
+}
+
+.section-chat-sidebar a:hover {
+  background-color: #283593;
+  color: #E8EAF6;
+}
+
+.section-chat-sidebar a::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: #E8EAF6; /* Underline color */
+  width: 0%;
+  transition: width 0.3s ease; /* Smooth underline animation */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.section-chat-sidebar a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Main content area */
+.section-chat-main-content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Chat content styling */
+.chat-content {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.chat-content:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation for tab transitions */
+.chat-content > div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Call containers styling */
+.video-call-container,
+.audio-call-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-call-container:hover,
+.audio-call-container:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Buttons styling */
+.button {
+  background-color: #3949AB; /* Button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #283593;
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-page {
+    flex-direction: column;
+  }
+
+  .section-chat-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .section-chat-main-content {
+    grid-template-rows: 1fr auto;
+  }
+}

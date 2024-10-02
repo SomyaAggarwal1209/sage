@@ -1,0 +1,136 @@
+/* Container for the course marketplace */
+.course-marketplace-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background-color: #eef2f7;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Title styling */
+.marketplace-title {
+    font-size: 3rem;
+    color: #2c3e50;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.marketplace-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    margin: 10px auto 0;
+}
+
+/* Flexbox layout for the courses */
+.courses-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Each course card */
+.course-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    padding: 20px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Hover effect on course cards */
+.course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Course image styling */
+.course-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Hover effect for course image */
+.course-card:hover .course-image {
+    transform: scale(1.08);
+}
+
+/* Course title and price */
+.course-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+/* Price styling */
+.course-price {
+    font-size: 1.2rem;
+    color: #3498db;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Button to buy the course */
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Hover effect for buy button */
+.buy-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .courses-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

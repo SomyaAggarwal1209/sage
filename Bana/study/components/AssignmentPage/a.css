@@ -1,0 +1,115 @@
+/* Main container styling */
+.assignment-generator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Title styling */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dropdown styling */
+.dropdown-container {
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.dropdown:focus {
+    border-color: #0070f3;
+}
+
+/* Generate button styling */
+.generate-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.generate-button:hover {
+    background-color: #0070f3;
+    transform: scale(1.05);
+}
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Questions container */
+.questions-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Questions list styling */
+.questions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.question-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

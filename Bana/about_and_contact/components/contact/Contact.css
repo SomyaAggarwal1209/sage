@@ -1,0 +1,97 @@
+/* General styles for the Contact component */
+.contact-container {
+  background-color: #E1BEE7; /* Soft lavender background */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title styling */
+.contact-title {
+  font-size: 24px;
+  color: #6A1B9A; /* Deep purple for title */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styling */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* Space between form elements */
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-size: 16px;
+  color: #4A148C; /* Dark purple for labels */
+  margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px;
+  border: 1px solid #BB86FC; /* Light purple border */
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #6200EA; /* Darker purple on focus */
+}
+
+/* Button styling */
+.submit-button {
+  background-color: #6A1B9A; /* Deep purple for button */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #4A148C; /* Darker purple on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-title {
+    font-size: 20px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+  }
+}

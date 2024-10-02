@@ -1,0 +1,27 @@
+.memory-game {
+  text-align: center;
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  background-color: #E8E6E3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  color: #6B705C;
+}
+
+.card.flipped {
+  background-color: #CB997E;
+  color: white;
+}

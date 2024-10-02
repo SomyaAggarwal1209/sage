@@ -1,0 +1,60 @@
+/* Navbar.css */
+body {
+  margin: 0;
+  font-family: 'Lora', serif; /* Elegant serif font for a peaceful look */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #F7F5F2; /* Soft light tone for the background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6B705C; /* Earthy green for balance and peace */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #6B705C;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #CB997E; /* Soft brown for a warm, calming effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .navbar-links li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}

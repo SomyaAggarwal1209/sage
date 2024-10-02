@@ -1,0 +1,45 @@
+/* Container for the overall layout */
+.study-music-audio-container {
+    padding: 20px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sub-navbar styling */
+.sub-navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sub-nav-button {
+    background-color: #009688;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+/* Active tab button style */
+.sub-nav-button.active {
+    background-color: #004d40;
+    font-weight: bold;
+}
+
+/* Button hover effect */
+.sub-nav-button:hover {
+    background-color: #00796b;
+}
+
+/* Content container styling */
+.content-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

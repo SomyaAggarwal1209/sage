@@ -1,0 +1,70 @@
+/* General styles for the Choose Marketplace component */
+.choose-marketplace-container {
+    background-color: #F1F8E9; /* Light green background */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+    text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title styling */
+.marketplace-title {
+    font-size: 28px;
+    color: #388E3C; /* Dark green for title */
+    margin-bottom: 20px;
+}
+
+/* Marketplace options styling */
+.marketplace-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Space between options */
+}
+
+/* Individual marketplace option styling */
+.marketplace-option {
+    background-color: #C8E6C9; /* Light green background */
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.marketplace-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected state styling */
+.selected {
+    border-color: #2E7D32; /* Darker green for selected option */
+    background-color: #A5D6A7; /* Slightly darker green */
+}
+
+/* Content area for selected marketplace */
+.selected-marketplace-content {
+    margin-top: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .marketplace-options {
+        grid-template-columns: 1fr; /* Stack options on small screens */
+    }
+}
