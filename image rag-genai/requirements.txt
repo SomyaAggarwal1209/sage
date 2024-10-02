@@ -12,5 +12,4 @@ pillow==9.5.0
 selenium==4.11.2
 langchain-google-genai==0.0.5
 langchain-core==0.0.6
-langchain-prompts
 langchain-output-parsers==0.0.4
