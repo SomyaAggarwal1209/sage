@@ -1,8 +1,8 @@
-fastapi
-pydantic
-langchain_google_genai
-langchain
-langchain_core
-uvicorn
-wikipedia
-google-generativeai
+fastapi: 0.115.0
+pydantic: 2.9.2
+langchain_google_genai : 0.7.2.
+langchain: 0.3.1
+langchain_core: 0.3.7
+uvicorn: 0.31.0
+wikipedia: (1, 4, 0)
+google.generativeai: 0.7.2
