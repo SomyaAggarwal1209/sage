@@ -1,14 +1,31 @@
+import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
-import os
 from typing import List
 
-from fastapi.middleware.cors import CORSMiddleware
-
-# Add this code block right after you initialize the FastAPI app
+# Initialize FastAPI app
 app = FastAPI()
+
+# Load the API key from environment variable
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+if not GOOGLE_API_KEY:
+    raise ValueError("GOOGLE_API_KEY is not set. Please configure it as an environment variable.")
+
+# Configure the generative AI API with the loaded key
+genai.configure(api_key=GOOGLE_API_KEY)
+
+from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+
+# Set up the model with Gemini (Google Generative AI)
+model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=GOOGLE_API_KEY, convert_system_message_to_human=True)
+parser = StrOutputParser()
+
+from fastapi.middleware.cors import CORSMiddleware
 
 # Configure CORS middleware
 app.add_middleware(
@@ -18,17 +35,6 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allows all headers
 )
-
-google_api_key = os.getenv('GOOGLE_API_KEY')
-genai.configure(api_key=GOOGLE_API_KEY)
-
-from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import ChatPromptTemplate
-
-# Set up the model with Gemini (Google Generative AI)
-model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=google_api_key, convert_system_message_to_human=True)
-parser = StrOutputParser()
 
 # Update the system prompt to generate questions
 system_template = """
