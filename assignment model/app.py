@@ -36,6 +36,10 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to my FastAPI app!"}
+
 # Update the system prompt to generate questions
 system_template = """
 You are an intelligent assistant. Based on the subject {subject} and topic {topic}, generate an assignment consisting of:
