@@ -10,8 +10,14 @@ import asyncio
 WOLFRAM_ALPHA_APPID = "5RT7JE-AAL5L34LKR"  # Replace with your actual APP ID
 os.environ["WOLFRAM_ALPHA_APPID"] = WOLFRAM_ALPHA_APPID
 
-# Configure the Gemini API key
-genai.configure(api_key="AIzaSyA3MzKibpGjCn3VCUvE3oo4-ZRtB9H9I4M")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+if not GOOGLE_API_KEY:
+    raise ValueError("GOOGLE_API_KEY is not set. Please configure it as an environment variable.")
+
+# Configure the generative AI API with the loaded key
+genai.configure(api_key=GOOGLE_API_KEY)
+
 from fastapi.middleware.cors import CORSMiddleware
 
 # Add this code block right after you initialize the FastAPI app
