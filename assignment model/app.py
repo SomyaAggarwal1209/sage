@@ -19,10 +19,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-
-# Set API key directly (Avoid hardcoding, better to use environment variables)
-GOOGLE_API_KEY = "AIzaSyDz22NslPyOWhJWrAlzuwse7B9LiWhlCaQ"  # Replace with your actual API key
-ap = "AIzaSyDz22NslPyOWhJWrAlzuwse7B9LiWhlCaQ"
+google_api_key = os.getenv('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
 
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -30,7 +27,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 
 # Set up the model with Gemini (Google Generative AI)
-model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=ap, convert_system_message_to_human=True)
+model = ChatGoogleGenerativeAI(model="gemini-1.5-pro", api_key=google_api_key, convert_system_message_to_human=True)
 parser = StrOutputParser()
 
 # Update the system prompt to generate questions
