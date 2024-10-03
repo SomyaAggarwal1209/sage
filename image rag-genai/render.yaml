@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fastapi-chrome-app
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+      sudo apt-get update
+      sudo apt-get install -y google-chrome-stable
+      wget -N https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -P /tmp/
+      unzip /tmp/chromedriver_linux64.zip -d /tmp/
+      sudo mv /tmp/chromedriver /usr/local/bin/chromedriver
+      sudo chmod +x /usr/local/bin/chromedriver
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+
