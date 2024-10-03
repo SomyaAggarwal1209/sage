@@ -61,7 +61,7 @@ def search_images_with_metadata(search_terms):
     options = Options()
     options.add_argument("--headless=new")
     options.add_argument("--disable-gpu")
-    service = Service("./chromedriver.exe")  # Update with the correct path to your chromedriver
+    service = Service("/usr/local/bin/chromedriver")  # Update with the correct path to your chromedriver
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
