@@ -14,7 +14,7 @@ from langchain_core.prompts import ChatPromptTemplate
 import logging
 import time
 from selenium.webdriver.chrome.options import Options
-
+import os
 from fastapi.middleware.cors import CORSMiddleware
 
 # Add this code block right after you initialize the FastAPI app
