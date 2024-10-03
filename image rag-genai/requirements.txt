@@ -1,6 +1,6 @@
-fastapi==0.95.2
+fastapi==1.10.0  
 uvicorn==0.22.0
-pydantic==1.10.9
+pydantic==2.7.4  
 google-generativeai==0.7.2
 python-dotenv==1.0.0
 langchain==0.3.1
@@ -12,4 +12,3 @@ pillow==9.5.0
 selenium==4.21.0
 langchain-google-genai==2.0.0
 langchain-core==0.3.7
-
